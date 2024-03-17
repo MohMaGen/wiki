@@ -1,0 +1,37 @@
+* *Outline*
+  - {* Modules}
+  -- {** Movement2d topdown}
+
+
+* Modules
+
+** Movement2d topdown.
+   Every moving entity must have *KinematicCharacterController*.
+
+*** Physics engine
+    For physics was used rapier 2d. %bevy_rapier2d crate%
+
+*** Gravity
+    In topdown we don't need gravity to be applied, so
+    simply set GravityScale component for all mobs to $0$.
+
+*** Calculate distance vector from one point ot another.
+    To calculate distance vector just substract from 
+    target vector current vector:
+    @math
+        curr - target
+    @end
+
+*** Move to point
+    *MoveToPointPlugin* realise moving systems and work with
+    *MoveToPoint* component.
+
+*** Move speed
+    *MoveSpeed* -- component defines current movement speed.
+
+    *example:*
+    Entity with *MoveToPoint* component will move to point
+    with speed equal value of *MoveSpeed* component.
+
+
+

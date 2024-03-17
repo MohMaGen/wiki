@@ -1,0 +1,15 @@
+* Figure
+** Multi line figure
+   @code typst
+    #show figure: set block(breakable: true)
+   @end
+
+* Raw
+** Line numbering
+   @code typst
+   #show raw.line: it => {
+       let diff = str(it.count).len() - str(it.number).len() + 2
+       let number = text(fill: gray, str(it.number) + " " * diff)
+       [ #number #it.body]
+   }
+   @end
